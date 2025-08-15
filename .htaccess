@@ -58,9 +58,9 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^([^\.]+)$ $1.html [NC,L]
     
-    # 重定向到 nanobananaai.org
-    RewriteCond %{HTTP_HOST} !^nanobananaai\.org$ [NC]
-    RewriteRule ^(.*)$ https://nanobananaai.org/$1 [L,R=301]
+    # 重定向到 nanobananaai.pro
+    RewriteCond %{HTTP_HOST} !^nanobananaai\.pro$ [NC]
+    RewriteRule ^(.*)$ https://nanobananaai.pro/$1 [L,R=301]
 </IfModule>
 
 # 错误页面
