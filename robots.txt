@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # 站点地图
-Sitemap: https://nanobananaai.org/sitemap.xml
+Sitemap: https://nanobananaai.pro/sitemap.xml
 
 # 禁止访问的目录（如果有的话）
 # Disallow: /admin/
