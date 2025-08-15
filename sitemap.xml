@@ -6,7 +6,7 @@
     
     <!-- 主页 -->
     <url>
-        <loc>https://nanobananaai.org/</loc>
+        <loc>https://nanobananaai.pro/</loc>
         <lastmod>2025-08-15</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
@@ -14,7 +14,7 @@
     
     <!-- Banana Features Page -->
     <url>
-        <loc>https://nanobananaai.org/#banana-features</loc>
+        <loc>https://nanobananaai.pro/#banana-features</loc>
         <lastmod>2025-08-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
@@ -22,7 +22,7 @@
     
     <!-- Banana Picture Gallery -->
     <url>
-        <loc>https://nanobananaai.org/#picture-gallery</loc>
+        <loc>https://nanobananaai.pro/#picture-gallery</loc>
         <lastmod>2025-08-15</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
@@ -30,7 +30,7 @@
     
     <!-- Banana Image Editor -->
     <url>
-        <loc>https://nanobananaai.org/#banana-editor</loc>
+        <loc>https://nanobananaai.pro/#banana-editor</loc>
         <lastmod>2025-08-15</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
@@ -38,7 +38,7 @@
     
     <!-- NanoBanana Pricing -->
     <url>
-        <loc>https://nanobananaai.org/#nanobanana-pricing</loc>
+        <loc>https://nanobananaai.pro/#nanobanana-pricing</loc>
         <lastmod>2025-08-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
@@ -46,7 +46,7 @@
     
     <!-- Banana Help & FAQ -->
     <url>
-        <loc>https://nanobananaai.org/#banana-help</loc>
+        <loc>https://nanobananaai.pro/#banana-help</loc>
         <lastmod>2025-08-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
@@ -54,7 +54,7 @@
     
     <!-- Banana Image Tips -->
     <url>
-        <loc>https://nanobananaai.org/banana-image-tips</loc>
+        <loc>https://nanobananaai.pro/banana-image-tips</loc>
         <lastmod>2025-08-15</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
@@ -62,7 +62,7 @@
     
     <!-- NanoBanana Blog -->
     <url>
-        <loc>https://nanobananaai.org/nanobanana-blog</loc>
+        <loc>https://nanobananaai.pro/nanobanana-blog</loc>
         <lastmod>2025-08-15</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
