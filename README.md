@@ -155,7 +155,7 @@ nanobanana-ai-website/
 2. 连接GitHub仓库
 3. 设置构建命令: `npm run build`
 4. 设置发布目录: `.` (根目录)
-5. 配置自定义域名: `nanobananaai.org`
+ 5. 配置自定义域名: `nanobananaai.pro`
 
 ## 📊 性能优化
 
@@ -174,8 +174,8 @@ nanobanana-ai-website/
 
 ## 📞 联系信息
 
-- **网站**: https://nanobananaai.org
-- **邮箱**: contact@nanobananaai.org
+ - **网站**: https://nanobananaai.pro
+ - **邮箱**: contact@nanobananaai.pro
 - **GitHub**: https://github.com/nanobanana/website
 
 ## 📄 许可证
