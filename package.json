@@ -1,7 +1,7 @@
 {
   "name": "nanobanana-ai-website",
   "version": "1.0.0",
-  "description": "NanoBanana AI - Revolutionary Banana Image Editor Website (Updated: 2025-08-15)",
+  "description": "Nano Banana AI - Revolutionary Banana Image Editor Website (Updated: 2025-08-16)",
   "main": "index.html",
   "scripts": {
     "start": "npx http-server . -p 3000 -o",
