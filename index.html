@@ -46,91 +46,7 @@
     <meta property="twitter:image:alt" content="Nano Banana AI revolutionary banana image editing interface">
     <meta property="twitter:domain" content="nanobananaai.pro">
     
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "Nano Banana AI - NanoBanana",
-        "description": "Advanced nano banana image editor using nanobanana artificial intelligence for banana picture enhancement and generation",
-        "url": "https://nanobananaai.pro",
-        "applicationCategory": "ImageEditingApplication",
-        "operatingSystem": "Web Browser",
-        "browserRequirements": "HTML5, JavaScript enabled",
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD",
-            "availability": "https://schema.org/InStock"
-        },
-        "creator": {
-            "@type": "Organization",
-            "name": "Nano Banana AI",
-            "url": "https://nanobananaai.pro"
-        },
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://nanobananaai.pro"
-        },
-        "keywords": "nano banana, banana image, banana picture, AI editor, nanobanana"
-    }
-    </script>
-    
-    <!-- Enhanced Structured Data for Organization -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Nano Banana AI",
-        "url": "https://nanobananaai.pro",
-        "logo": "https://nanobananaai.pro/images/logo.png",
-        "description": "Leading provider of AI-powered banana image editing technology",
-        "foundingDate": "2025",
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "contactType": "customer service",
-            "email": "contact@nanobananaai.pro"
-        },
-        "sameAs": [
-            "https://github.com/nanobanana"
-        ],
-        "specialty": "AI banana image processing and enhancement"
-    }
-    </script>
-    
-    <!-- FAQ Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "What makes NanoBanana the best banana image editor?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "NanoBanana is specifically designed for banana image editing and banana picture enhancement. Unlike generic tools, our AI understands banana-specific characteristics, textures, and lighting, delivering superior banana image results that maintain natural appearance while adding professional polish."
-                }
-            },
-            {
-                "@type": "Question", 
-                "name": "How does NanoBanana process banana pictures?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Simply upload your banana image and describe your desired changes using natural language. Our nanobanana AI analyzes the banana picture composition, understands your instructions, and generates enhanced banana images that exceed your expectations."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Can I use NanoBanana for commercial banana image projects?",
-                "acceptedAnswer": {
-                    "@type": "Answer", 
-                    "text": "Absolutely! NanoBanana is perfect for commercial banana image creation, food marketing campaigns, and professional banana picture projects. Our high-resolution banana image outputs meet commercial standards and licensing requirements."
-                }
-            }
-        ]
-    }
-    </script>
+    <!-- Critical Structured Data Only - Rest moved to bottom -->
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -139,10 +55,24 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     
-    <!-- Fonts -->
+    <!-- Fonts - Optimized Loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Third-party Preconnects -->
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
+    <link rel="preconnect" href="https://fundingchoicesmessages.google.com">
+    <link rel="preconnect" href="https://ep2.adtrafficquality.google">
+    
+    <!-- Font CSS - Non-blocking load with reduced font weights -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'; this.onload=null;">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"></noscript>
+    
+    <!-- Resource Prefetching -->
+    <link rel="prefetch" href="script.js">
+    <link rel="prefetch" href="performance.js">
+    <link rel="prefetch" href="animations.css">
     
     <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
@@ -151,9 +81,42 @@
     <!-- Preload Critical Resources -->
     <link rel="preload" href="styles.css" as="style">
     <link rel="preload" href="animations.css" as="style">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" as="style">
+    
+    <!-- Critical CSS - Inlined for faster rendering -->
+    <style>
+        /* Critical Reset & Base */
+        *{margin:0;padding:0;box-sizing:border-box}
+        html{scroll-behavior:smooth}
+        body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background-color:#0a0a0a;color:#ffffff;line-height:1.6;overflow-x:hidden}
+        
+        /* Critical Header Styles */
+        .header{position:fixed;top:0;left:0;right:0;background-color:rgba(10,10,10,0.95);backdrop-filter:blur(10px);transition:background-color 0.3s ease;border-bottom:1px solid rgba(255,255,255,0.1);z-index:1000}
+        .nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 0}
+        .container{max-width:1200px;margin:0 auto;padding:0 20px}
+        .nav-brand{display:flex;align-items:center;gap:0.5rem;font-weight:700;font-size:1.25rem}
+        .brand-text{background:linear-gradient(135deg,#f59e0b,#eab308);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        
+        /* Critical Hero Section */
+        .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:2rem 0;background:radial-gradient(ellipse at center,rgba(245,158,11,0.1) 0%,transparent 50%)}
+        .hero-content{max-width:800px;margin:0 auto}
+        .hero h1{font-size:clamp(2.5rem,5vw,4rem);font-weight:800;margin-bottom:1.5rem;background:linear-gradient(135deg,#f59e0b,#eab308,#f97316);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .hero p{font-size:1.25rem;color:#d1d5db;margin-bottom:2rem;line-height:1.8}
+        
+        /* Critical Button Styles */
+        .btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.875rem 2rem;border-radius:0.5rem;text-decoration:none;font-weight:600;transition:all 0.3s ease;border:none;cursor:pointer;font-size:1rem}
+        .btn-primary{background:linear-gradient(135deg,#f59e0b,#eab308);color:#000;box-shadow:0 4px 20px rgba(245,158,11,0.3)}
+        .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(245,158,11,0.4)}
+        
+        /* Critical Layout */
+        .skip-link{position:absolute;top:-40px;left:6px;background:#f59e0b;color:#000;padding:8px;text-decoration:none;z-index:1001;border-radius:4px}
+        .skip-link:focus{top:6px}
+        
+        /* Loading State */
+        .loading{opacity:0;animation:fadeIn 0.5s ease-in-out forwards}
+        @keyframes fadeIn{to{opacity:1}}
+    </style>
 </head>
-<body>
+<body class="loading">
     <!-- Skip to Content for Accessibility -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
     
@@ -478,85 +441,197 @@
     </footer>
 
     <!-- Google Analytics -->
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4NVBY02DGP"></script>
+    <!-- Google tag (gtag.js) - Optimized Loading -->
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-4NVBY02DGP');
+        // Defer GTM loading until after page load
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                var script = document.createElement('script');
+                script.async = true;
+                script.src = 'https://www.googletagmanager.com/gtag/js?id=G-4NVBY02DGP';
+                document.head.appendChild(script);
+                
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-4NVBY02DGP');
+                window.gtag = gtag;
+            }, 1000);
+        });
     </script>
     
     <!-- Google Ads -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8126269008200876"
          crossorigin="anonymous"></script>
     
-    <!-- JavaScript -->
-    <script src="script.js"></script>
-    <script src="performance.js"></script>
-    
-    <!-- Structured Data for Reviews -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Product",
-        "name": "Google Nano Banana AI",
-        "description": "Google's most consistent AI image generator from LMArena - Revolutionary nano-banana model for advanced image editing",
-        "image": [
-            "https://nanobananaai.pro/images/google-nano-banana-logo.png",
-            "https://nanobananaai.pro/images/google-banana-ai-preview.jpg",
-            "https://nanobananaai.pro/images/nano-banana-interface.png"
-        ],
-        "brand": {
-            "@type": "Brand",
-            "name": "Google Nano Banana"
-        },
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.9",
-            "reviewCount": "150",
-            "bestRating": "5",
-            "worstRating": "1"
-        },
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD",
-            "availability": "https://schema.org/InStock",
-            "shippingDetails": {
-                "@type": "OfferShippingDetails",
-                "shippingRate": {
-                    "@type": "MonetaryAmount",
-                    "value": "0",
-                    "currency": "USD"
-                },
-                "deliveryTime": {
-                    "@type": "ShippingDeliveryTime",
-                    "handlingTime": {
-                        "@type": "QuantitativeValue",
-                        "minValue": 0,
-                        "maxValue": 0,
-                        "unitCode": "DAY"
-                    },
-                    "transitTime": {
-                        "@type": "QuantitativeValue",
-                        "minValue": 0,
-                        "maxValue": 0,
-                        "unitCode": "DAY"
-                    }
-                }
-            },
-            "hasMerchantReturnPolicy": {
-                "@type": "MerchantReturnPolicy",
-                "applicableCountry": "US",
-                "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-                "merchantReturnDays": 30,
-                "returnMethod": "https://schema.org/ReturnByMail",
-                "returnFees": "https://schema.org/FreeReturn"
-            }
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch(registrationError => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
         }
-    }
+    </script>
+    
+    <!-- JavaScript -->
+    <script defer src="script.js"></script>
+    <script defer src="performance.js"></script>
+    
+    <!-- Structured Data - Loaded after critical content -->
+    <script>
+        // Defer structured data loading
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                var structuredData = [
+                    {
+                        "@context": "https://schema.org",
+                        "@type": "WebApplication",
+                        "name": "Nano Banana AI - NanoBanana",
+                        "description": "Advanced nano banana image editor using nanobanana artificial intelligence for banana picture enhancement and generation",
+                        "url": "https://nanobananaai.pro",
+                        "applicationCategory": "ImageEditingApplication",
+                        "operatingSystem": "Web Browser",
+                        "browserRequirements": "HTML5, JavaScript enabled",
+                        "offers": {
+                            "@type": "Offer",
+                            "price": "0",
+                            "priceCurrency": "USD",
+                            "availability": "https://schema.org/InStock"
+                        },
+                        "creator": {
+                            "@type": "Organization",
+                            "name": "Nano Banana AI",
+                            "url": "https://nanobananaai.pro"
+                        },
+                        "mainEntityOfPage": {
+                            "@type": "WebPage",
+                            "@id": "https://nanobananaai.pro"
+                        },
+                        "keywords": "nano banana, banana image, banana picture, AI editor, nanobanana"
+                    },
+                    {
+                        "@context": "https://schema.org",
+                        "@type": "Organization",
+                        "name": "Nano Banana AI",
+                        "url": "https://nanobananaai.pro",
+                        "logo": "https://nanobananaai.pro/images/logo.png",
+                        "description": "Leading provider of AI-powered banana image editing technology",
+                        "foundingDate": "2025",
+                        "contactPoint": {
+                            "@type": "ContactPoint",
+                            "contactType": "customer service",
+                            "email": "contact@nanobananaai.pro"
+                        },
+                        "sameAs": [
+                            "https://github.com/nanobanana"
+                        ],
+                        "specialty": "AI banana image processing and enhancement"
+                    },
+                    {
+                        "@context": "https://schema.org",
+                        "@type": "FAQPage",
+                        "mainEntity": [
+                            {
+                                "@type": "Question",
+                                "name": "What makes NanoBanana the best banana image editor?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "NanoBanana is specifically designed for banana image editing and banana picture enhancement. Unlike generic tools, our AI understands banana-specific characteristics, textures, and lighting, delivering superior banana image results that maintain natural appearance while adding professional polish."
+                                }
+                            },
+                            {
+                                "@type": "Question", 
+                                "name": "How does NanoBanana process banana pictures?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "Simply upload your banana image and describe your desired changes using natural language. Our nanobanana AI analyzes the banana picture composition, understands your instructions, and generates enhanced banana images that exceed your expectations."
+                                }
+                            },
+                            {
+                                "@type": "Question",
+                                "name": "Can I use NanoBanana for commercial banana image projects?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer", 
+                                    "text": "Absolutely! NanoBanana is perfect for commercial banana image creation, food marketing campaigns, and professional banana picture projects. Our high-resolution banana image outputs meet commercial standards and licensing requirements."
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "@context": "https://schema.org",
+                        "@type": "Product",
+                        "name": "Google Nano Banana AI",
+                        "description": "Google's most consistent AI image generator from LMArena - Revolutionary nano-banana model for advanced image editing",
+                        "image": [
+                            "https://nanobananaai.pro/images/google-nano-banana-logo.png",
+                            "https://nanobananaai.pro/images/google-banana-ai-preview.jpg",
+                            "https://nanobananaai.pro/images/nano-banana-interface.png"
+                        ],
+                        "brand": {
+                            "@type": "Brand",
+                            "name": "Google Nano Banana"
+                        },
+                        "aggregateRating": {
+                            "@type": "AggregateRating",
+                            "ratingValue": "4.9",
+                            "reviewCount": "150",
+                            "bestRating": "5",
+                            "worstRating": "1"
+                        },
+                        "offers": {
+                            "@type": "Offer",
+                            "price": "0",
+                            "priceCurrency": "USD",
+                            "availability": "https://schema.org/InStock",
+                            "shippingDetails": {
+                                "@type": "OfferShippingDetails",
+                                "shippingRate": {
+                                    "@type": "MonetaryAmount",
+                                    "value": "0",
+                                    "currency": "USD"
+                                },
+                                "deliveryTime": {
+                                    "@type": "ShippingDeliveryTime",
+                                    "handlingTime": {
+                                        "@type": "QuantitativeValue",
+                                        "minValue": 0,
+                                        "maxValue": 0,
+                                        "unitCode": "DAY"
+                                    },
+                                    "transitTime": {
+                                        "@type": "QuantitativeValue",
+                                        "minValue": 0,
+                                        "maxValue": 0,
+                                        "unitCode": "DAY"
+                                    }
+                                }
+                            },
+                            "hasMerchantReturnPolicy": {
+                                "@type": "MerchantReturnPolicy",
+                                "applicableCountry": "US",
+                                "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+                                "merchantReturnDays": 30,
+                                "returnMethod": "https://schema.org/ReturnByMail",
+                                "returnFees": "https://schema.org/FreeReturn"
+                            }
+                        }
+                    }
+                ];
+                
+                structuredData.forEach(function(data) {
+                    var script = document.createElement('script');
+                    script.type = 'application/ld+json';
+                    script.text = JSON.stringify(data);
+                    document.head.appendChild(script);
+                });
+            }, 500);
+        });
     </script>
 </body>
-</html>    
+</html>
