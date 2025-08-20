@@ -21,18 +21,15 @@ faqItems.forEach(item => {
         // Close all FAQ items
         faqItems.forEach(faqItem => {
             const btn = faqItem.querySelector('.faq-question');
-            const content = faqItem.querySelector('.faq-answer');
             
             btn.setAttribute('aria-expanded', 'false');
             faqItem.classList.remove('active');
-            content.style.display = 'none';
         });
         
         // Open clicked item if it wasn't expanded
         if (!isExpanded) {
             question.setAttribute('aria-expanded', 'true');
             item.classList.add('active');
-            answer.style.display = 'block';
         }
     });
     
@@ -136,11 +133,10 @@ function simulateImageProcessing() {
         });
     }
     
-    // Add loading animation
+    // Add loading animation using CSS classes
     placeholderItems.forEach((item, index) => {
         setTimeout(() => {
-            item.style.background = 'linear-gradient(135deg, #f59e0b, #eab308)';
-            item.style.animation = 'pulse 1s ease-in-out infinite';
+            item.classList.add('processing');
         }, index * 200);
     });
     
@@ -150,9 +146,9 @@ function simulateImageProcessing() {
         const processingTime = endTime - startTime;
         
         placeholderItems.forEach(item => {
-            item.style.animation = 'none';
-            item.style.background = 'linear-gradient(135deg, #10b981, #059669)';
-            item.innerHTML = '<div style="color: white; font-size: 0.8rem; display: flex; align-items: center; justify-content: center; height: 100%;">🍌✓</div>';
+            item.classList.remove('processing');
+            item.classList.add('completed');
+            item.innerHTML = '<div class="completion-indicator">🍌✓</div>';
         });
         
         // Send processing completion event
@@ -204,20 +200,29 @@ document.querySelectorAll('.launch-btn, .btn-primary').forEach(button => {
     });
 });
 
-// Header scroll effect
+// Header scroll effect - Optimized to prevent forced reflow
 let lastScrollY = window.scrollY;
 const header = document.querySelector('.header');
+let ticking = false;
 
-window.addEventListener('scroll', () => {
+function updateHeaderBackground() {
     const currentScrollY = window.scrollY;
     
     if (currentScrollY > 100) {
-        header.style.background = 'rgba(10, 10, 10, 0.98)';
+        header.classList.add('scrolled');
     } else {
-        header.style.background = 'rgba(10, 10, 10, 0.95)';
+        header.classList.remove('scrolled');
     }
     
     lastScrollY = currentScrollY;
+    ticking = false;
+}
+
+window.addEventListener('scroll', () => {
+    if (!ticking) {
+        requestAnimationFrame(updateHeaderBackground);
+        ticking = true;
+    }
 });
 
 // Add pulse animation for loading
@@ -233,13 +238,13 @@ document.head.appendChild(style);
 
 // Initialize page
 document.addEventListener('DOMContentLoaded', () => {
-    // Add loading animation to placeholder items
+    // Add loading animation to placeholder items using CSS classes
     const placeholderItems = document.querySelectorAll('.placeholder-item');
     placeholderItems.forEach((item, index) => {
         setTimeout(() => {
-            item.style.transform = 'scale(1.05)';
+            item.classList.add('init-pulse');
             setTimeout(() => {
-                item.style.transform = 'scale(1)';
+                item.classList.remove('init-pulse');
             }, 200);
         }, index * 100);
     });
