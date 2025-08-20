@@ -48,8 +48,13 @@ body {
     right: 0;
     background-color: rgba(10, 10, 10, 0.95);
     backdrop-filter: blur(10px);
+    transition: background-color 0.3s ease;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     z-index: 1000;
+}
+
+.header.scrolled {
+    background-color: rgba(10, 10, 10, 0.98);
 }
 
 .nav {
@@ -353,6 +358,32 @@ body {
     background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(234, 179, 8, 0.1));
     border: 1px dashed rgba(245, 158, 11, 0.3);
     border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.placeholder-item.processing {
+    background: linear-gradient(135deg, #f59e0b, #eab308);
+    border-color: transparent;
+    animation: pulse 1s ease-in-out infinite;
+}
+
+.placeholder-item.completed {
+    background: linear-gradient(135deg, #10b981, #059669);
+    border-color: transparent;
+    animation: none;
+}
+
+.placeholder-item.init-pulse {
+    transform: scale(1.05);
+}
+
+.completion-indicator {
+    color: white;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
 }
 
 /* Features Section */
