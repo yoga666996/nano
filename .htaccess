@@ -1,6 +1,4 @@
-# Nano Banana AI 网站优化配置
-
-# 启用压缩
+# Enable compression
 <IfModule mod_deflate.c>
     AddOutputFilterByType DEFLATE text/plain
     AddOutputFilterByType DEFLATE text/html
@@ -13,75 +11,71 @@
     AddOutputFilterByType DEFLATE application/x-javascript
 </IfModule>
 
-# 设置缓存策略
+# Set cache headers
 <IfModule mod_expires.c>
     ExpiresActive on
-    ExpiresByType text/css "access plus 1 year"
-    ExpiresByType application/javascript "access plus 1 year"
-    ExpiresByType image/png "access plus 1 year"
-    ExpiresByType image/jpg "access plus 1 year"
-    ExpiresByType image/jpeg "access plus 1 year"
-    ExpiresByType image/gif "access plus 1 year"
-    ExpiresByType image/svg+xml "access plus 1 year"
-    ExpiresByType image/webp "access plus 1 year"
-    ExpiresByType text/html "access plus 1 day"
+    
+    # HTML files - short cache (1 hour)
+    ExpiresByType text/html "access plus 1 hour"
+    
+    # CSS and JS files - medium cache (1 week)
+    ExpiresByType text/css "access plus 1 week"
+    ExpiresByType application/javascript "access plus 1 week"
+    ExpiresByType application/x-javascript "access plus 1 week"
+    
+    # Images - long cache (1 month)
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/jpg "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/gif "access plus 1 month"
+    ExpiresByType image/svg+xml "access plus 1 month"
+    ExpiresByType image/webp "access plus 1 month"
+    
+    # Fonts - long cache (1 year)
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType application/font-woff "access plus 1 year"
+    ExpiresByType application/font-woff2 "access plus 1 year"
+    
+    # Manifest and Service Worker - short cache (1 day)
+    ExpiresByType application/manifest+json "access plus 1 day"
+    ExpiresByType text/cache-manifest "access plus 1 day"
 </IfModule>
 
-# 设置安全头
+# Set Cache-Control headers
 <IfModule mod_headers.c>
-    # HTTPS强制
-    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+    # HTML files
+    <FilesMatch "\.(html|htm)$">
+        Header set Cache-Control "public, max-age=3600"
+    </FilesMatch>
     
-    # 防止点击劫持
-    Header always set X-Frame-Options "SAMEORIGIN"
+    # CSS and JS files
+    <FilesMatch "\.(css|js)$">
+        Header set Cache-Control "public, max-age=604800"
+    </FilesMatch>
     
-    # 防止MIME类型嗅探
+    # Images
+    <FilesMatch "\.(png|jpg|jpeg|gif|svg|webp)$">
+        Header set Cache-Control "public, max-age=2592000"
+    </FilesMatch>
+    
+    # Fonts
+    <FilesMatch "\.(woff|woff2|eot|ttf)$">
+        Header set Cache-Control "public, max-age=31536000"
+    </FilesMatch>
+    
+    # Service Worker - no cache
+    <FilesMatch "sw\.js$">
+        Header set Cache-Control "no-cache, no-store, must-revalidate"
+        Header set Pragma "no-cache"
+        Header set Expires "0"
+    </FilesMatch>
+</IfModule>
+
+# Security headers
+<IfModule mod_headers.c>
     Header always set X-Content-Type-Options "nosniff"
-    
-    # XSS保护
+    Header always set X-Frame-Options "SAMEORIGIN"
     Header always set X-XSS-Protection "1; mode=block"
-    
-    # 推荐安全策略
     Header always set Referrer-Policy "strict-origin-when-cross-origin"
 </IfModule>
-
-# URL重写规则
-<IfModule mod_rewrite.c>
-    RewriteEngine On
-    
-    # 强制HTTPS
-    RewriteCond %{HTTPS} off
-    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-    
-    # 删除 .html 扩展名
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^([^\.]+)$ $1.html [NC,L]
-    
-    # 重定向到 nanobananaai.pro
-    RewriteCond %{HTTP_HOST} !^nanobananaai\.pro$ [NC]
-    RewriteRule ^(.*)$ https://nanobananaai.pro/$1 [L,R=301]
-</IfModule>
-
-# 错误页面
-ErrorDocument 404 /404.html
-ErrorDocument 500 /500.html
-
-# 禁止访问敏感文件
-<Files ".htaccess">
-    Order allow,deny
-    Deny from all
-</Files>
-
-<Files "*.log">
-    Order allow,deny
-    Deny from all
-</Files>
-
-# 字符集设置
-AddDefaultCharset UTF-8
-
-# MIME类型设置
-AddType image/webp .webp
-AddType font/woff2 .woff2
-AddType application/javascript .mjs
